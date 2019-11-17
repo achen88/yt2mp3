@@ -6,3 +6,7 @@ it's like crappy beatport
 - python3
 - ffmpeg
 
+## Instructions
+- Install python dependencies: `make install`
+- Run test script: `make test`
+
