@@ -1,3 +1,6 @@
 venv
 .DS_Store
+__pycache__
+out
+tmp
 
