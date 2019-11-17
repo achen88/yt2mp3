@@ -1,8 +1,10 @@
 from pytube import YouTube
 from tqdm import tqdm
+import ffmpeg
+import html
 
 yt = YouTube('https://www.youtube.com/watch?v=TADQbywYNmU')
-audio = yt.streams.filter(only_audio=False).first()
+audio = yt.streams.filter().first()
 
 pbar = tqdm(total=audio.filesize)
 
@@ -11,5 +13,15 @@ def progress_fn(self, chunk, *_):
 
 yt.register_on_progress_callback(progress_fn)
 
-audio = yt.streams.filter(only_audio=False).first()
-audio.download()
+audio = yt.streams.filter().first()
+audio.download(output_path="./tmp", filename="tmp")
+
+(
+  ffmpeg
+  .input("./tmp/tmp.mp4")
+  .audio
+  .output('./out/' + html.unescape(audio.title) + ".mp3")
+  .run_async()
+  .wait()
+)
+
