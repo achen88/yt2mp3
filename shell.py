@@ -8,7 +8,7 @@ if len(sys.argv) > 1:
   print("Reading from file...")
   fd = open(sys.argv[1], 'r')
 else:
-  print("Enter a youtube link and press enter")
+  print("Enter a youtube link and press enter, mp3s go to ./out/")
   print("This shell can also batch download from a list")
   print("  Control+C exits")
 print("\n> ", end="", flush=True)
