@@ -10,3 +10,6 @@ it's like crappy beatport
 - Install python dependencies: `make install`
 - Run test script: `make test`
 
+## Demo
+![Example 1]()
+![Example 2]()
