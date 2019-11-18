@@ -11,5 +11,5 @@ it's like crappy beatport
 - Run test script: `make test`
 
 ## Demo
-![Example 1]()
-![Example 2]()
+![Example 1](https://raw.githubusercontent.com/achen88/bootlegport/master/images/ex1.gif)
+![Example 2](https://raw.githubusercontent.com/achen88/bootlegport/master/images/ex2.gif)
