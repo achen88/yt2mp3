@@ -1,5 +1,5 @@
-# bootlegport 🎧 🎛
-it's like crappy beatport
+# yt2mp3 🎧 🎛
+it's yet another Youtube -> mp3 converter
 
 ## Dependencies
 - make >= 3.82
@@ -20,6 +20,6 @@ Mp3s go to `./out`
 
 ## Demo
 ### `make shell`
-![Example 1](https://raw.githubusercontent.com/achen88/bootlegport/master/images/ex1.gif)
+![Example 1](https://raw.githubusercontent.com/achen88/yt2mp3/master/images/ex1.gif)
 ### `make shell LIST=[filename]`
-![Example 2](https://raw.githubusercontent.com/achen88/bootlegport/master/images/ex2.gif)
+![Example 2](https://raw.githubusercontent.com/achen88/yt2mp3/master/images/ex2.gif)
