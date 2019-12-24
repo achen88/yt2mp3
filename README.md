@@ -20,7 +20,7 @@ it's yet another Youtube -> mp3 converter
 ### `make`-less
 ||Command|
 |---|---|
-|Install python dependencies|`pip3 install -r requirements.txt`| 
+|Setup + python dependencies|`mkdir tmp out && pip3 install -r requirements.txt`|
 |Run test script|`python3 test.py`|
 |Run interactive downloader|`python3 shell.py`|
 |Run downloader on list of urls|`python3 shell.py -f [filename]`|
