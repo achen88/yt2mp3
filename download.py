@@ -3,7 +3,7 @@ from tqdm import tqdm
 import ffmpeg
 import html
 
-def download(link):
+def download(link, dest):
   pbar = tqdm()
   yt = YouTube(link)
   video = yt.streams.filter().first()
@@ -22,7 +22,7 @@ def download(link):
     ffmpeg
     .input("./tmp/tmp.mp4")
     .audio
-    .output('./out/' + html.unescape(video.title) + ".mp3")
+    .output(dest + html.unescape(video.title) + ".mp3")
     .run_async()
     .wait()
   )
