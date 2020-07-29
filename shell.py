@@ -33,6 +33,7 @@ try:
     buff += chunk
     if buff.endswith('\n'):
       download(buff[:-1], args.dest)
+      os.remove('./tmp/tmp.mkv')
       buff = ''
       print("\n> ", end="")
       sys.stdout.flush()

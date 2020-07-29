@@ -3,7 +3,7 @@ import ffmpeg
 import html
 
 def download(link, dest):
-  ydl = youtube_dl.YoutubeDL({'outtmpl': 'tmp/tmp.%(ext)s', 'merge_output_format': 'mkv'})
+  ydl = youtube_dl.YoutubeDL({'outtmpl': 'tmp/tmp.%(ext)s', 'merge_output_format': 'mkv', 'nooverwrites': False})
   title = None
   with ydl:
     result = ydl.extract_info(
