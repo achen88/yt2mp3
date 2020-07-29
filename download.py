@@ -1,29 +1,26 @@
-from pytube import YouTube
-from tqdm import tqdm
+import youtube_dl
 import ffmpeg
 import html
 
 def download(link, dest):
-  pbar = tqdm()
-  yt = YouTube(link)
-  video = yt.streams.filter().first()
+  ydl = youtube_dl.YoutubeDL({'outtmpl': 'tmp/tmp.%(ext)s'})
+  title = None
+  with ydl:
+    result = ydl.extract_info(
+      link,
+      download=True
+    )
+    if 'entries' in result:
+      title = result['entries'][0]['title']
+    else:
+      title = result['title']
 
-  pbar.reset(total=video.filesize)
-
-  def progress_fn(self, chunk, *_):
-    pbar.update(len(chunk))
-
-  yt.register_on_progress_callback(progress_fn)
-
-  video = yt.streams.filter().first()
-  video.download(output_path="./tmp", filename="tmp")
-
-  return (
-    ffmpeg
-    .input("./tmp/tmp.mp4")
-    .audio
-    .output(dest + html.unescape(video.title) + ".mp3")
-    .run_async()
-    .wait()
-  )
+    return (
+      ffmpeg
+      .input("./tmp/tmp.mkv")
+      .audio
+      .output(dest + html.unescape(title) + ".mp3")
+      .run_async()
+      .wait()
+    )
 
